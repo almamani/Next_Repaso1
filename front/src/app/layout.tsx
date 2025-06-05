@@ -1,7 +1,8 @@
+import NavBar from "@/components/NavBar/index";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { Agdasima } from "next/font/google";
 import "./globals.css";
+import Footer from "../components/Footer/index";
 
 const agdasima = Agdasima({
   subsets: ["latin"],
@@ -20,8 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={agdasima.className}>{children}</body>
+    <html lang="en" className={agdasima.className}>
+      <body className="container">
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
